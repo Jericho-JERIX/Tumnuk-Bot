@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-/* module.exports */ const x = {
+module.exports = {
     getAllCommands: function(){
         const CommandList = fs.readdirSync('commands')
         var Command = {}

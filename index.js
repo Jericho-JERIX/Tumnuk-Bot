@@ -1,27 +1,29 @@
-const {Client,Intents,MessageButton,MessageActionRow, Message} = require('discord.js')
+const {Client,GatewayIntentBits,Partials} = require('discord.js')
 const {getAllCommands,getAllInteractions} = require('./utils/generate')
 const fs = require('fs')
 
 const dotenv = require('dotenv')
+const { PREFIX } = require('./constants/setting.constant')
 const LoginEvent = require('./modules/LoginEvent')
 dotenv.config()
 
-const PREFIX = "-"
 const Command = getAllCommands()
 const Interaction = getAllInteractions()
 
 const client = new Client({
     intents: [
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_MESSAGE_TYPING,
-        Intents.FLAGS.GUILD_VOICE_STATES,
-    ]
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildMessageTyping,
+        GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.MessageContent
+    ],
+    partials: [Partials.Channel]
 })
 
-client.on('ready',async (test)=>{
-    console.log("Mint-Tutor Bot Online!")
-    // LoginEvent.setPresence(client)
+client.on('ready',async ()=>{
+    console.log("Tumnuk Online!")
+    LoginEvent.switchServerIcon(client)
 })
 client.login(process.env.TOKEN)
 

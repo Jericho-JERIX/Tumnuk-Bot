@@ -5,7 +5,7 @@ module.exports = {
     roleRequirement: [],
     channelRequirement: [],
     execute: function(message,arg){
-        message.channel.send("Hello")
+        message.channel.send("หวัดดี")
         return 0
     }
 }

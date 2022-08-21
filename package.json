@@ -1,0 +1,24 @@
+{
+  "name": "tumnuk-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jericho-JERIX/Tumnuk-Bot.git"
+  },
+  "author": "KanonKC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jericho-JERIX/Tumnuk-Bot/issues"
+  },
+  "homepage": "https://github.com/Jericho-JERIX/Tumnuk-Bot#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "discord.js": "^14.2.0",
+    "dotenv": "^16.0.1"
+  }
+}
